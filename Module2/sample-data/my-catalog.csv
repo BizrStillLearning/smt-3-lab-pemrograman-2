@@ -1,0 +1,54 @@
+tag,model,category,daily_fine,condition
+LP-001,ThinkPad T14,Computing,50000,GOOD
+PR-014,Epson EB-S41,Optics,35000,GOOD
+LP-002,Latitude 5440,Computing,50000,GOOD
+OS-003,Rigol DS1054Z,Instrumentation,60000,NEEDS_CHECK
+MC-007,Audio-Technica AT2020,Audio,40000,GOOD
+RA-001,Raspberry Pi 4 Model B,Robotics,20000,GOOD
+LP-003,MacBook Air M1,Computing,75000,GOOD
+PR-015,BenQ TK800M,Optics,45000,GOOD
+OS-004,Siglent SDS1202X-E,Instrumentation,55000,GOOD
+MC-008,Shure SM7B,Audio,65000,NEEDS_CHECK
+RA-002,Arduino Uno Rev3,Robotics,10000,GOOD
+LP-004,Dell XPS 13,Computing,80000,GOOD
+PR-016,Optoma HD146X,Optics,40000,GOOD
+OS-005,Keysight EDUX1052G,Instrumentation,70000,GOOD
+MC-009,Rode NT1-A,Audio,35000,GOOD
+RA-003,NVIDIA Jetson Nano,Robotics,30000,GOOD
+LP-005,HP Spectre x360,Computing,70000,GOOD
+PR-017,Sony VPL-VW295ES,Optics,90000,NEEDS_CHECK
+OS-006,Tektronix TBS1052B,Instrumentation,65000,GOOD
+MC-010,AKG Pro Audio C214,Audio,50000,GOOD
+RA-004,Elegoo Mega 2560,Robotics,15000,GOOD
+LP-006,Asus ROG Zephyrus G14,Computing,85000,GOOD
+PR-018,LG HU810PW,Optics,85000,GOOD
+OS-007,Hantek DSO5102P,Instrumentation,45000,GOOD
+MC-011,Sennheiser MKH 416,Audio,95000,GOOD
+RA-005,DJI Tello Edu,Robotics,25000,NEEDS_CHECK
+LP-007,Acer Swift 3,Computing,45000,GOOD
+PR-019,ViewSonic PX701-4K,Optics,50000,GOOD
+OS-008,Owon SDS1102,Instrumentation,40000,GOOD
+MC-012,Neumann U87 Ai,Audio,120000,GOOD
+RA-006,Makeblock mBot,Robotics,20000,GOOD
+LP-008,Lenovo Yoga C940,Computing,65000,GOOD
+PR-020,Panasonic PT-RZ570,Optics,75000,GOOD
+OS-009,GW Instek GDS-1102B,Instrumentation,50000,GOOD
+MC-013,Zoom H6,Audio,30000,NEEDS_CHECK
+RA-007,Sphero BOLT,Robotics,15000,GOOD
+LP-009,Microsoft Surface Laptop 4,Computing,75000,GOOD
+PR-021,Canon XEED WUX450ST,Optics,60000,GOOD
+OS-010,PicoScope 2204A,Instrumentation,25000,GOOD
+MC-014,Tascam DR-40X,Audio,25000,GOOD
+RA-008,Lego Mindstorms EV3,Robotics,40000,GOOD
+LP-010,Razer Blade 15,Computing,90000,GOOD
+PR-022,JVC DLA-NX5,Optics,100000,GOOD
+OS-011,Fluke 190-204,Instrumentation,110000,NEEDS_CHECK
+MC-015,Blue Yeti X,Audio,20000,GOOD
+RA-009,VEX V5 Classroom Starter Kit,Robotics,55000,GOOD
+LP-001,ThinkPad T14,Computing,50000,GOOD
+MC-007,Audio-Technica AT2020,Audio,40000,GOOD
+RA-001,Raspberry Pi 4 Model B,Robotics,20000,GOOD
+CM-001,Sony Alpha a7 III,Camera,80000,GOOD
+CM-002,Canon EOS R5,Camera,120000,GOOD
+VR-001,Meta Quest 3,Virtual Reality,60000,GOOD
+VR-002,HTC Vive Pro 2,Virtual Reality,85000,NEEDS_CHECK
