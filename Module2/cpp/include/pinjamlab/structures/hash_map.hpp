@@ -6,13 +6,13 @@
 #include <functional>
 #include <cstddef>
 
-namespace pinjamlab {
+namespace pinjamlab::structures {
 
 template <typename K, typename V, typename Hash = std::hash<K>>
 class HashMap {
 private:
     using Entry = std::pair<K, V>;
-    using Bucket = std::list<Entry>; // Rantai collision untuk satu bucket
+    using Bucket = std::list<Entry>;
 
     std::vector<Bucket> buckets_;
     std::size_t size_{0};
@@ -20,17 +20,17 @@ private:
     Hash hasher_{};
 
     [[nodiscard]] std::size_t indexFor(const K& key, std::size_t m) const {
-        return hasher_(key) % m; // Hash, lalu lipat dengan modulo
+        return hasher_(key) % m;
     }
 
-    void rehash(std::size_t newCount) { // O(n): biaya amortised
+    void rehash(std::size_t newCount) {
         std::vector<Bucket> grown(newCount);
         for (Bucket& b : buckets_) {
             for (Entry& e : b) {
                 grown[indexFor(e.first, newCount)].push_back(std::move(e));
             }
         }
-        buckets_.swap(grown); // Tukar bucket lama dengan yang baru
+        buckets_.swap(grown);
     }
 
 public:
@@ -40,10 +40,9 @@ public:
     void insert(K key, V value) {
         Bucket& b = buckets_[indexFor(key, buckets_.size())];
 
-        // Pindai duplikat dulu agar rantai tidak korup
         for (Entry& e : b) {
             if (e.first == key) {
-                e.second = std::move(value); // Update jika key sudah ada
+                e.second = std::move(value);
                 return;
             }
         }
@@ -51,7 +50,6 @@ public:
         b.emplace_back(std::move(key), std::move(value));
         ++size_;
 
-        // Tegakkan Load Factor
         if (loadFactor() > maxLoad_) {
             rehash(buckets_.size() * 2);
         }
@@ -85,4 +83,4 @@ public:
     [[nodiscard]] std::size_t bucketCount() const noexcept { return buckets_.size(); }
 };
 
-} // namespace pinjamlab
+} // namespace pinjamlab::structures
