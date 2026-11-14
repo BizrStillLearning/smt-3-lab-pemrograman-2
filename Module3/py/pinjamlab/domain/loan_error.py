@@ -49,3 +49,14 @@ class QuotaExceeded(LoanError):
         super().__init__(f"Loan quota exceeded: {active} active, limit {limit}")
         self.active = active
         self.limit = limit
+
+class FineCapReached(LoanError):
+    def __init__(self, current_fines: int, cap_limit: int) -> None:
+        super().__init__(f"Member holds unpaid fines over the maximum threshold: {current_fines} / {cap_limit}")
+        self.current_fines = current_fines
+        self.cap_limit = cap_limit
+
+class ReservationConflict(LoanError):
+    def __init__(self, reserved_by: str) -> None:
+        super().__init__(f"Equipment is already reserved by member: {reserved_by}")
+        self.reserved_by = reserved_by

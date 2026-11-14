@@ -76,4 +76,26 @@ public:
 
 }  // namespace pinjamlab
 
+class FineCapReached : public LoanError {
+    int currentFines_;
+    int capLimit_;
+public:
+    FineCapReached(int currentFines, int capLimit)
+        : LoanError("Member holds unpaid fines over the maximum threshold: " + std::to_string(currentFines) + " / " + std::to_string(capLimit)),
+          currentFines_(currentFines), capLimit_(capLimit) {}
+
+    [[nodiscard]] int currentFines() const noexcept { return currentFines_; }
+    [[nodiscard]] int capLimit() const noexcept { return capLimit_; }
+};
+
+class ReservationConflict : public LoanError {
+    std::string reservedBy_;
+public:
+    explicit ReservationConflict(std::string reservedBy)
+        : LoanError("Equipment is already reserved by member: " + reservedBy),
+          reservedBy_(std::move(reservedBy)) {}
+
+    [[nodiscard]] const std::string& reservedBy() const noexcept { return reservedBy_; }
+};
+
 #endif  // PINJAMLAB_DOMAIN_LOAN_ERROR_HPP

@@ -1,11 +1,7 @@
-"""Result[T]: a small frozen dataclass. Pure domain module."""
-from __future__ import annotations
-
 from dataclasses import dataclass
 from typing import Generic, TypeVar
 
 T = TypeVar("T")
-
 
 @dataclass(frozen=True, slots=True)
 class Result(Generic[T]):
@@ -24,5 +20,5 @@ class Result(Generic[T]):
     @property
     def value(self) -> T:
         if not self.ok:
-            raise RuntimeError(f"value on a failed Result: {self.error}")
-        return self._value  # type: ignore[return-value]
+            raise RuntimeError(f"Attempted to access value on a failed Result: {self.error}")
+        return self._value  # type: ignore [return-value]

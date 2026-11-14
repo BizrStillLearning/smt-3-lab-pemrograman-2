@@ -36,25 +36,25 @@ struct RunResult {
     const auto rows = reader.read(csvPath);
     result.total = static_cast<int>(rows.size());
 
-    for (const auto& row : rows) {
+    for (std::size_t i = 0; i < rows.size(); ++i) {
+        const auto& row = rows[i];
+
         const auto validated = validator.validate(row);
+
         if (!validated.ok()) {
             ++result.rejected;
-            result.rejectedLines.push_back(
-                ReportWriter::rejectedLine(row.lineNumber, validated.error()));
+            result.rejectedLines.push_back("row " + std::to_string(i + 1) + ": " + validated.error());
             continue;
         }
+
         const auto& req = validated.value();
         try {
-            (void)svc.borrow(req.tag, req.memberId, req.days);
+            svc.borrow(req.tag, req.memberId, req.days);
             ++result.created;
-        } catch (const LoanError& e) {  // the family we understand
+        } catch (const pinjamlab::domain::LoanError& e) {
             ++result.rejected;
-            result.rejectedLines.push_back(
-                ReportWriter::rejectedLine(row.lineNumber, e.what()));
+            result.rejectedLines.push_back("row " + std::to_string(i + 1) + ": " + e.what());
         }
-        // Anything that is NOT a LoanError is left to travel: we do not know
-        // what it is, so we are not entitled to decide it is unimportant.
     }
     return result;
 }
