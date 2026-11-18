@@ -1,0 +1,18 @@
+loanId,tag,member,days,rate,note
+L-101,LP-001,M-101,7,50000,Regular loan
+L-102,LP-002,M-102,3,50000,Regular loan
+L-103,LP-003,M-103,0,50000,Zero-day same-day return
+L-104,PR-014,M-101,7,35000,"Chan, Wei Ling"
+L-105,OS-003,M-102,90,60000,Boundary fine: max duration
+L-106,MC-007,M-103,5,75000,"Niño García, Unicode name"
+L-107,RA-001,M-101,4,120000,"Contains, an embedded comma"
+L-108,LP-004,M-102,6,55000,Standard loan
+L-109,LP-005,M-103,2,55000,Standard loan
+L-110,TC-001,M-101,3,110000,Thermal camera loan
+L-111,TC-002,M-102,5,110000,"Note with ""doubled quotes"" inside"
+L-112,SP-002,M-103,2,90000,Standard loan
+L-113,SP-003,M-101,1,150000,Standard loan
+L-114,MC-008,M-102,3,75000,"Müller, multi-byte name"
+L-115,MC-009,M-103,4,75000,Standard loan
+L-116,RA-002,M-101,6,120000,"Line one
+Line two embedded newline"
